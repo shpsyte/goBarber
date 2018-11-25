@@ -2,6 +2,9 @@ const express = require('express')
 const nunjucks = require('nunjucks')
 // lida com path do servidor
 const path = require('path')
+// importa nosso arquivo de rotas
+const routes = require('./routes')
+
 class App {
   constructor() {
     this.express = express()
@@ -29,11 +32,16 @@ class App {
       autoescape: true
     })
 
+    // Configura o express para server arquivos publicos e estátios para nossa aplicação
+    this.express.use(express.static(path.resolve(__dirname, 'public')))
+
     // set a view engine no express;
     this.express.set('view engine', 'njk')
   }
 
-  routes() {}
+  routes() {
+    this.express.use(routes)
+  }
 }
 
 // exporta o modulo
