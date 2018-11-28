@@ -26,6 +26,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   )
 
+  // prototype cria uma nova função para nossa classe, e vamos
+  // compara a senha do banco.
+  // é onbrigatório usar o function para manter o this
+  User.prototype.checkPassword = function(password) {
+    return bcrypt.compare(password, this.passwordHash)
+  }
   // Method 2 via the .hook() method (or its alias .addHook() method)
   // User.hook('beforeSave', async (user, options) => {
   //   if (user.password) {
