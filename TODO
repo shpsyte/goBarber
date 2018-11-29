@@ -1,11 +1,9 @@
 
 Todo:
-  ☐ Item
-
-Archive:
-  ☐ asdfadsf
-  ☐ sdfdasf
-  ☐ asdfasdf
-  ☐ adsfdsf
-  ☐ asdfasd
-  ☐ asdfasd
+Desafio:
+  Crie uma seção para o prestador de serviços acompanhar os
+  agendamentos do dia programados com ele.
+  Essa seção deve incluir as informações do usuário que agendou e também o horário do agendamento
+  ☐ Criar um Controller para acompanhamento de serviços @started(18-11-28 14:29)
+  ☐ Deve buscar somente seu agendamentos
+  ☐ Criar uma view para servicos

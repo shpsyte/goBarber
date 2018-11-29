@@ -20,6 +20,7 @@ const FileController = require('./app/Controllers/FileController')
 const AppointmentController = require('./app/Controllers/AppointmentController')
 // Modulo AvailableController
 const AvailableController = require('./app/Controllers/AvailableController')
+const MyAppointmentController = require('./app/Controllers/MyAppointmentController')
 
 routes.use((req, res, next) => {
   res.locals.flashSuccess = req.flash('success')
@@ -47,6 +48,7 @@ routes.use('/app', authMiddleware)
 routes.get('/app/dashboard', DashboardController.index)
 routes.get('/app/appointments/new/:provider', AppointmentController.create)
 routes.post('/app/appointments/new/:provider', AppointmentController.store)
+routes.get('/app/Myappointments/', MyAppointmentController.index)
 
 routes.get('/app/avaiable/:provider', AvailableController.index)
 
